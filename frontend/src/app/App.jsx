@@ -5,6 +5,7 @@ import createHistory from 'history/createBrowserHistory';
 import Home from './home';
 
 export const history = createHistory();
+const baseUrl = "Recycle-Game"; // will be /hypercomp
 
 class App extends Component {
 
@@ -12,7 +13,7 @@ class App extends Component {
     return (
       <Router history={history}>
         <div>
-          <Route exact path="/" component={Home} />
+          <Route exact path={baseUrl + "/"} component={Home} />
         </div>
       </Router>
     );

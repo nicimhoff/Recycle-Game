@@ -1,12 +1,17 @@
 {
   "name": "frontend",
   "version": "1.0.0",
+  "homepage": "https://nicimhoff.github.io/Recycle-Game",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "react-scripts start"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "predeploy": "yarn; yarn run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
+    "gh-pages": "^2.0.1",
     "history": "^4.9.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
