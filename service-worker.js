@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/Recycle-Game/precache-manifest.b8b80aeb0745612583aacfeb66accbd8.js"
+  "/Recycle-Game/precache-manifest.f2e68c8bfd5006c1906f32ce56658e2c.js"
 );
 
 workbox.clientsClaim();
