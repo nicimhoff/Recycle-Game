@@ -5,7 +5,8 @@ import createHistory from 'history/createBrowserHistory';
 import Home from './home';
 
 export const history = createHistory();
-const baseUrl = "Recycle-Game"; // will be /hypercomp
+const baseUrl = ""; // when game is on localhost
+//const baseUrl = "Recycle-Game"; // for when game is hosted
 
 class App extends Component {
 
