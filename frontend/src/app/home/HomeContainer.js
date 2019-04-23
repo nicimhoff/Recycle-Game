@@ -27,6 +27,9 @@ const mapDispatchToProps = dispatch => ({
   updateLeaderboard: () => {
     dispatch(homeOperations.updateLeaderboard());
   },
+  sendGamescore: (email, gamescore) => {
+    dispatch(homeOperations.sendGamescore(email, gamescore));
+  },
   login: (email, password) => {
     dispatch(homeOperations.login(email, password));
   },

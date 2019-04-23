@@ -25,9 +25,10 @@ const updateLeaderboard = leaderboard => ({
   leaderboard
 });
 
-const sendGamescore = () => ({
-  type: types.SEND_SCORE
-})
+const sendGamescore = gamescore => ({
+  type: types.SEND_GAMESCORE,
+  gamescore
+});
 
 const login = highscore => ({
   type: types.LOGIN,

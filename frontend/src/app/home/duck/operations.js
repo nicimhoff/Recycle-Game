@@ -53,10 +53,19 @@ const updateLeaderboard = () => {
 }
 
 const sendGamescore = (email, gamescore) => {
-  return dispatch => {
-    return dispatch(actions.sendGamescore());
+  return async dispatch => {
+    try {
+      await axios.get(
+        `https://aqq11p2sd0.execute-api.us-east-2.amazonaws.com/default/updateScore?email=${email}&score=${gamescore}`
+      )
+      return dispatch(actions.sendGamescore(gamescore));
+    } catch (error) {
+      return dispatch(actions.sendGamescore(gamescore));
+    }
   };
 }
+
+//        `https://aqq11p2sd0.execute-api.us-east-2.amazonaws.com/default/updateScore?email=${email}&score=${gamescore}`
 
 const login = (email, password) => {
   return async dispatch => {

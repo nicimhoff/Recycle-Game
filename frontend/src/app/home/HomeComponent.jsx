@@ -22,7 +22,7 @@ class HomeComponent extends React.Component {
 
   componentDidMount() {
     if (this.props.isLoggedIn === true) {
-      this.props.updateHighscore();
+      this.props.updateHighscore(this.props.email);
     }
     this.props.updateLeaderboard();
   }
@@ -118,10 +118,21 @@ class HomeComponent extends React.Component {
       leaderboardDisplay: "none",
       endofroundDisplay: "none"
     }));
+
+    if (this.props.isLoggedIn === true) {
+      this.props.updateHighscore(this.props.email);
+    }
+    this.props.updateLeaderboard();
   }
 
   onEndRound = () => {
-    this.setState(() => ({ endofroundDisplay: "block" }));
+    this.props.setGamescore(22);
+    this.setState(() => ({ 
+      endofroundDisplay: "block"
+    }));
+    if (this.props.isLoggedIn) {
+      this.props.sendGamescore(this.props.email, 22);
+    }
   }
 
   render() {
