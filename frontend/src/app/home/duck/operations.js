@@ -1,5 +1,6 @@
 import axios from 'axios';
 import actions from './actions';
+import { Auth } from "aws-amplify";
 
 const login = (email, password) => {
   return async dispatch => {
