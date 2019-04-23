@@ -1,11 +1,14 @@
 {
-  "main.js": "/Recycle-Game/static/js/main.48ad5cef.chunk.js",
-  "main.js.map": "/Recycle-Game/static/js/main.48ad5cef.chunk.js.map",
+  "main.css": "/Recycle-Game/static/css/main.54d4f290.chunk.css",
+  "main.js": "/Recycle-Game/static/js/main.f271c38f.chunk.js",
+  "main.js.map": "/Recycle-Game/static/js/main.f271c38f.chunk.js.map",
   "runtime~main.js": "/Recycle-Game/static/js/runtime~main.eff9a5ca.js",
   "runtime~main.js.map": "/Recycle-Game/static/js/runtime~main.eff9a5ca.js.map",
-  "static/js/2.b59bec1d.chunk.js": "/Recycle-Game/static/js/2.b59bec1d.chunk.js",
-  "static/js/2.b59bec1d.chunk.js.map": "/Recycle-Game/static/js/2.b59bec1d.chunk.js.map",
+  "static/js/2.05ba3ae8.chunk.js": "/Recycle-Game/static/js/2.05ba3ae8.chunk.js",
+  "static/js/2.05ba3ae8.chunk.js.map": "/Recycle-Game/static/js/2.05ba3ae8.chunk.js.map",
   "index.html": "/Recycle-Game/index.html",
-  "precache-manifest.f2e68c8bfd5006c1906f32ce56658e2c.js": "/Recycle-Game/precache-manifest.f2e68c8bfd5006c1906f32ce56658e2c.js",
-  "service-worker.js": "/Recycle-Game/service-worker.js"
+  "precache-manifest.dbc82164eed89a41e6c2d28e5fb19355.js": "/Recycle-Game/precache-manifest.dbc82164eed89a41e6c2d28e5fb19355.js",
+  "service-worker.js": "/Recycle-Game/service-worker.js",
+  "static/css/main.54d4f290.chunk.css.map": "/Recycle-Game/static/css/main.54d4f290.chunk.css.map",
+  "static/media/recycle.png": "/Recycle-Game/static/media/recycle.61888d37.png"
 }
