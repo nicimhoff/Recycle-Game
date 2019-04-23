@@ -4,7 +4,8 @@ import { homeOperations } from './duck';
 
 const mapStateToProps = state => ({
   email: state.home.email,
-  password: state.home.password
+  password: state.home.password,
+  isLoggedIn: state.home.isLoggedIn
 });
 
 const mapDispatchToProps = dispatch => ({

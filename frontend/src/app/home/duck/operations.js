@@ -18,8 +18,10 @@ const login = (email, password) => {
   return async dispatch => {
     try {
       await Auth.signIn(email, password);
+      console.log("user logged in");
       return dispatch(actions.login());
     } catch (error) {
+      alert(error.message);
       return dispatch(actions.loginFail());
     }
   };
