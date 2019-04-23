@@ -3,6 +3,7 @@ import { Router, Route } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
 // add components here
 import Home from './home';
+import Game from './game';
 
 export const history = createHistory();
 const baseUrl = ""; // when game is on localhost
@@ -15,6 +16,7 @@ class App extends Component {
       <Router history={history}>
         <div>
           <Route exact path={baseUrl + "/"} component={Home} />
+          <Route exact path={baseUrl + "/game"} component={Game} />
         </div>
       </Router>
     );
