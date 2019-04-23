@@ -1,6 +1,18 @@
 import axios from 'axios';
 import actions from './actions';
 
+const setEmail = email => {
+  return dispatch => {
+    return dispatch(actions.setEmail(email));
+  };
+};
+
+const setPassword = password => {
+  return dispatch => {
+    return dispatch(actions.setPassword(password));
+  };
+};
+
 const login = (email, password) => {
   return async dispatch => {
     try {
@@ -34,6 +46,8 @@ const createAccount = (email, password) => {
 };
 
 export default {
+  setEmail,
+  setPassword,
   login,
   createAccount
 };

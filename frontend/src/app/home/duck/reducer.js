@@ -1,5 +1,4 @@
 import types from './types';
-import homeReducer from '.';
 
 const initialState = {
   email: "",
@@ -8,6 +7,16 @@ const initialState = {
 
 const homeReducer = (state = initialState, action) => {
   switch (action.type) {
+    case types.SET_EMAIL:
+      return {
+        ...state,
+        email: action.email
+      };
+    case types.SET_PASSWORD:
+      return {
+        ...state,
+        password: action.password
+      };
     case types.LOGIN:
       return {
         ...state

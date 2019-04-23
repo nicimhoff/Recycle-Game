@@ -9,8 +9,6 @@ class HomeComponent extends React.Component {
 
     this.state = {
       score: 0,
-      username: "",
-      password: "",
       questionDisplay: "none",
       loginDisplay: "none",
       questionOne: 0,
@@ -77,9 +75,21 @@ class HomeComponent extends React.Component {
     }
   }
 
-  onLogin = event => {
+  onEmailChange = event => {
+    const email = event.target.value;
+    this.props.setEmail(email);
+  };
+
+  onPasswordChange = event => {
+    const password = event.target.value;
+    this.props.setPassword(password);
+  };
+
+  onLogin = () => {
 
     this.onClickWindow();
+
+    this.props.login(this.props.email, this.props.password);
 
     // call function on backend to login
     // if successful, render components and set variables as needed   
@@ -88,6 +98,9 @@ class HomeComponent extends React.Component {
   onCreateAccount = () => {
 
     this.onClickWindow();
+
+    this.props.createAccount(this.props.email, this.props.password);
+
     // call function on backend to create account
     // if successful, render components and set variables as needed
     // automatic login
@@ -155,11 +168,24 @@ class HomeComponent extends React.Component {
           <form className="modal-content animate" onSubmit={this.onLogin}>
 
             <div className="container">
-              <label for="uname"><b>Username</b></label>
-              <input type="text" placeholder="Enter Username" name="uname" required></input>
+              <label for="uname"><b>Email</b></label>
+              <input 
+                value={this.props.email}
+                onChange={event => this.onEmailChange(event)}
+                type="text" 
+                placeholder="Enter Username" 
+                name="uname" 
+                required>
+              </input>
 
               <label for="psw"><b>Password</b></label>
-              <input type="password" placeholder="Enter Password" name="psw" required></input>
+              <input 
+                value={this.props.password}
+                onChange={event => this.onPasswordChange(event)}
+                type="password" 
+                placeholder="Enter Password" 
+                name="psw" 
+                required></input>
         
               <button type="button" onClick={this.onLogin}>Login</button>
               <button type="button" onClick={this.onCreateAccount}>(Don't Have An Account?) Create One!</button>
