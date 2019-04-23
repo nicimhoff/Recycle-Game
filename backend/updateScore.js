@@ -11,23 +11,38 @@ exports.handler = function(event, context, callback){
    var params = {
     TableName:"Users",
     Key:{
-        "email": data.email
+        "email": event.queryStringParameters.email
     },
     UpdateExpression: "set score = :r",
     ExpressionAttributeValues:{
-        ":r":data.score
+        ":r":   parseInt(event.queryStringParameters.score, 10)
     },
     ReturnValues:"UPDATED_NEW"
 };
 
 console.log("Updating the item...");
-docClient.update(params, function(err, data) {
+let request = docClient.update(params, function(err, data) {
     if (err) {
         console.error("Unable to update item. Error JSON:", JSON.stringify(err, null, 2));
     } else {
         console.log("UpdateItem succeeded:", JSON.stringify(data, null, 2));
     }
 });
+
+request.on('success', function(response) {
+     console.log(response.data);
+     let myResponse = response.data.Attributes.score
+    const out = {
+        statusCode: 200,
+        headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Credentials': true,
+        },
+        body: JSON.stringify(myResponse),
+    };
+    console.log("RESPONSE", out);
+    callback(null,out);
+ });
 
     
 };
