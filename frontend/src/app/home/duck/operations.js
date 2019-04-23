@@ -30,9 +30,15 @@ const login = (email, password) => {
 const createAccount = (email, password) => {
   return async dispatch => {
     try {
-      await Auth.createUser(email, password);
+      await Auth.signUp({
+        username: email,
+        password: password
+      });
+      await Auth.signIn(email, password);
       return dispatch(actions.createAccount());
+      alert("account created successfully")
     } catch (error) {
+      alert(error.message);
       return dispatch(actions.createAccountFail());
     }
   };
