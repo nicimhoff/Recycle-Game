@@ -26,16 +26,20 @@ const homeReducer = (state = initialState, action) => {
         ...state,
         email: "",
         password: ""
-      }
+      };
     case types.CREATE_ACCOUNT:
       return {
         ...state
-      }
+      };
     case types.CREATE_ACCOUNT_FAIL:
       return {
         ...state,
         email: "",
         password: ""
+      };
+    default:
+      return {
+        ...state
       }
   }
 }
