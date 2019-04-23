@@ -17,12 +17,7 @@ const setPassword = password => {
 const login = (email, password) => {
   return async dispatch => {
     try {
-      const response = await axios.post(
-        // call route
-        {
-          ...(email, password) // sends loginData
-        }
-      );
+      await Auth.signIn(email, password);
       return dispatch(actions.login());
     } catch (error) {
       return dispatch(actions.loginFail());
