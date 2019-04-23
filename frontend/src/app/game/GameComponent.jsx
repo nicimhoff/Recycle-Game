@@ -1,5 +1,4 @@
 import React from 'react';
-import recycle from './recycle.png';
 
 class GameComponent extends React.Component {  
   constructor(props) {

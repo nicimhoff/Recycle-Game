@@ -2,7 +2,11 @@ import types from './types';
 
 const initialState = {
   email: "",
-  password: ""
+  password: "",
+  isLoggedIn: false,
+  highscore: 0,
+  leaderboard: [],
+  gamescore: 0
 };
 
 const homeReducer = (state = initialState, action) => {
@@ -17,9 +21,30 @@ const homeReducer = (state = initialState, action) => {
         ...state,
         password: action.password
       };
-    case types.LOGIN:
+    case types.SET_GAMESCORE:
+      return {
+        ...state,
+        gamescore: action.gamescore
+      };
+    case types.UPDATE_HIGHSCORE:
+      return {
+        ...state,
+        highscore: action.highscore
+      };
+    case types.UPDATE_LEADERBOARD:
+      return {
+        ...state,
+        leaderboard: action.leaderboard
+      };
+    case types.SEND_GAMESCORE:
       return {
         ...state
+      };
+    case types.LOGIN:
+      return {
+        ...state,
+        isLoggedIn: true,
+        highscore: action.highscore
       };
     case types.LOGIN_FAIL:
       return {
@@ -29,7 +54,9 @@ const homeReducer = (state = initialState, action) => {
       };
     case types.CREATE_ACCOUNT:
       return {
-        ...state
+        ...state,
+        isLoggedIn: true,
+        highscore: action.highscore
       };
     case types.CREATE_ACCOUNT_FAIL:
       return {
