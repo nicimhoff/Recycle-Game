@@ -1,5 +1,15 @@
 import types from './types';
 
+const setEmail = email => ({
+  type: types.SET_EMAIL,
+  email
+})
+
+const setPassword = password => ({
+  type: types.SET_PASSWORD,
+  password
+});
+
 const login = () => ({
   type: types.LOGIN
 });
@@ -17,6 +27,8 @@ const createAccountFail = () => ({
 });
 
 export default {
+  setEmail,
+  setPassword,
   login,
   createAccount,
   loginFail,
