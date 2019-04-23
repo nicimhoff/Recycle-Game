@@ -10,7 +10,6 @@ exports.handler = function(event, context, callback){
 
     let scanningParameters = {
         TableName: "Users",
-        //ProjectionExpression: "LeagueID, isPending, CreatedBy, members, contracts, currentWeek",
         KeyConditionExpression: "email = :id",
         ExpressionAttributeValues: {
             ":id": id
