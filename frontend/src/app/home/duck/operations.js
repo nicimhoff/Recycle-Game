@@ -30,12 +30,7 @@ const login = (email, password) => {
 const createAccount = (email, password) => {
   return async dispatch => {
     try {
-      const response = await axios.post(
-        // call route
-        {
-          ...(email, password) // sends loginData
-        }
-      );
+      await Auth.createUser(email, password);
       return dispatch(actions.createAccount());
     } catch (error) {
       return dispatch(actions.createAccountFail());
