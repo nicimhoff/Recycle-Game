@@ -8,19 +8,19 @@ self.__precacheManifest = [
     "url": "/Recycle-Game/static/js/runtime~main.eff9a5ca.js"
   },
   {
-    "revision": "97dffa070cdf011080b4",
-    "url": "/Recycle-Game/static/js/main.27f105a4.chunk.js"
+    "revision": "23f91f47284dd0c43c1a",
+    "url": "/Recycle-Game/static/js/main.77c0c85f.chunk.js"
   },
   {
     "revision": "317a06fe49a91ed1c73f",
     "url": "/Recycle-Game/static/js/2.8cd08693.chunk.js"
   },
   {
-    "revision": "97dffa070cdf011080b4",
+    "revision": "23f91f47284dd0c43c1a",
     "url": "/Recycle-Game/static/css/main.54d4f290.chunk.css"
   },
   {
-    "revision": "fbe0b1365f5390a64c99e7a7265c0d3f",
+    "revision": "1568da88477deb3c3a03c2cf03fab377",
     "url": "/Recycle-Game/index.html"
   }
 ];
