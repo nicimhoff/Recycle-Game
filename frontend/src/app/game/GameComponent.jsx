@@ -1,41 +1,57 @@
-import React, { Component } from "react";
+import React from "react";
 import './GameComponent.css';
 import recycle from './recycle.png';
 
 
 var correctItems = 0;
 var incorrectItems = 0;
-var allCount = 0;
 var data = ["papercup","T-shirt","glass","iPhone","battery","cardboard box","plastic box","banana peel","books","water bottle", "diapers","paper towels", "pizza box", "tires", "yogurt cups"]
 var indicators = [1,1,1,0,0,1,0,1,1,1,0,0,0,0,0];
 var index = 0;
+var sanity;
+var gamescore = 0;
+var moveon = false;
 
-
-
-var score= 0;
-
-
-
-
-
-class GameComponent extends Component {
+class GameComponent extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      score: 0
+    };
+    this.finish = null;
   }
 
-  submit() {
-    if (this.props.sanity) {
-      this.props.setGamescore(correctItems);
-    } else {
-      this.props.setGamescore(incorrectItems);
+  onSubmit = () => {
+    clearInterval(this.finish);
+    this.props.setGamescore(this.state.score);
+    if (this.props.isLoggedIn) {
+      this.props.sendGamescore(this.props.email, this.state.score);
     }
     this.props.setGameover(true);
     return this.props.history.push("/");
   }
 
+  countDown = () => {
+    if (index >= 15) {
+      this.props.setGameover(true);
+      moveon= true;
+    }
+    if (moveon) this.onSubmit();
+    this.setState(() => ({
+      score: gamescore
+    }))
+  }
+
   componentDidMount() {
 
-    console.log(this.props.sanity)
+    this.finish = setInterval(this.countDown, 1000);
+
+    sanity = this.props.sanity;
+    correctItems = 0;
+    incorrectItems = 0;
+    index = 0;
+    gamescore = 0;
+    moveon = false;
 
     var addEvent = (function () {
       if (document.addEventListener) {
@@ -149,10 +165,16 @@ class GameComponent extends Component {
           el.parentNode.removeChild(el);
           if(indicators[index]==1) {
               correctItems = correctItems + 1;
+              if (sanity) {
+                gamescore++;
+              }
+          } else {
+            if (!sanity) {
+              gamescore++;
+            }
           }
           index++;
 
-          console.log("Items in the left"+correctItems)
           // stupid nom text + fade effect
           bin2.className = '';
           yum.innerHTML = eat[parseInt(Math.random() * eat.length)];
@@ -172,16 +194,6 @@ class GameComponent extends Component {
               }, 50);
           }, 250);
 
-
-
-
-          if(correctItems === 5){
-             
-
-              alert("hey!")
-          }
-          console.log("we came to checkNumber, correctItems=="+correctItems)
-
           return false;
       })
       
@@ -192,8 +204,15 @@ class GameComponent extends Component {
 
         el.parentNode.removeChild(el);
           if(indicators[index]==0) {
-              incorrectItems= incorrectItems + 1;
-          }
+              correctItems= correctItems + 1;
+              if (sanity) {
+                gamescore++;
+              }
+      } else {
+        if (!sanity) {
+          gamescore++;
+        }
+      }
           index++;
           console.log("Items in the right"+incorrectItems)
 
@@ -249,16 +268,18 @@ class GameComponent extends Component {
 
 render() {
     return (
-      <div class="holder">
 
-          {this.props.sanity && <h1>Save the Earth!</h1>}
-          {!this.props.sanity && <h1>Destroy the World!</h1>}
-          {this.props.sanity && <h2>Score: {correctItems}</h2>}
-          {!this.props.sanity && <h2>Score: {incorrectItems}</h2>}
+
+      <div class="body-game">
+          {this.props.sanity && <h1 className="h1-game">Save the Earth!</h1>}
+          {!this.props.sanity && <h1 className="h1-game">Destroy the World!</h1>}
+          {this.props.sanity && <h2 className="h2-game">Score: {this.state.score}</h2>}
+          {!this.props.sanity && <h2 className="h2-game">Score: {this.state.score}</h2>}
+
           <div className="game-div">
-          <div id="bin">
+            <div id="bin">
               <img alt="" className="recycle-img" src={recycle} />
-          </div>
+            </div>
           <ul>
                   <li><a draggable="true" href="" id="one">{data[0]}</a></li>
                   <li><a draggable="true" href="" id="two">{data[1]}</a></li>
