@@ -164,23 +164,23 @@ class HomeComponent extends React.Component {
         <div id="questions" className="modal" style={{display: this.state.questionDisplay}}>  
           <form className="modal-content animate" onSubmit={this.onSubmitQuestions}>
             <div className="container">
-              <label className="question" for="uname"><b>Question 1</b></label>
+              <label className="question" for="uname"><b>You can save trees by recycling paper products</b></label>
               <select className="styled-select" onChange={this.onQuestionOneChange} type="text" value={this.state.q1} required>
-                <option value="">Yes / No</option>
-                <option value={1}>Yes</option>
-                <option value={0}>No</option>
+                <option value="">True / False</option>
+                <option value={1}>True</option>
+                <option value={0}>False</option>
               </select>
-              <label className="question" for="psw"><b>Question 2</b></label>
+              <label className="question" for="psw"><b>Littering isn't actually bad for the environment</b></label>
               <select className="styled-select" onChange={this.onQuestionTwoChange} type="password" value={this.state.q2} required>
-                <option value="">Yes / No</option>
-                <option value={1}>Yes</option>
-                <option value={0}>No</option>
+                <option value="">True / False</option>
+                <option value={0}>True</option>
+                <option value={1}>False</option>
               </select>
-              <label className="question" for="psw"><b>Question 3</b></label>
+              <label className="question" for="psw"><b>Everything can be recycled!</b></label>
               <select className="styled-select" onChange={this.onQuestionThreeChange} type="password" value={this.state.q3} required>
-                <option value="">Yes / No</option>
-                <option value={1}>Yes</option>
-                <option value={0}>No</option>
+                <option value="">True / False</option>
+                <option value={0}>True</option>
+                <option value={1}>False</option>
               </select>        
               <button className="menu-button" type="submit">Play Game</button>
               <button className="menu-button" type="button" onClick={this.onClickWindow}>Cancel</button>
