@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import GameComponent from './GameComponent';
-import { homeOperations } from './duck';
+import { homeOperations } from '../home/duck';
 
 const mapStateToProps = state => ({
   email: state.home.email,

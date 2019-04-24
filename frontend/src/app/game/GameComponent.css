@@ -85,13 +85,15 @@ li.over {
     margin-left: 0;
 }
 
+.recycle-img {
+  width: 300px;
+}
+
 #bin2 {
   height: 250px;
   width: 0%;
   position: relative;
 }
-
-
 
 #bin p {
     font-weight: bold;
