@@ -103,7 +103,7 @@ class HomeComponent extends React.Component {
 
   onCreateAccount = () => {
     this.onClickWindow();
-    this.props.createAccount(this.props.email, this.props.password);
+    this.props.createAccount(this.state.name, this.state.pass);
   }
 
   onPlayAgain = () => {
