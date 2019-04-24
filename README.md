@@ -1,5 +1,5 @@
 # Recycle-Game
-Access Our game on: http://recycle-app-client.s3-website.us-east-2.amazonaws.com
+Access Our game on: http://recycle-final.s3-website.us-east-2.amazonaws.com
 ## Prerequisites
 Install Node.js v10.15.1: https://nodejs.org/en/ 
 Install Yarn: https://yarnpkg.com/lang/en/docs/install/
