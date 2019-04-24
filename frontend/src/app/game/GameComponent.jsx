@@ -5,11 +5,17 @@ import recycle from './recycle.png';
 
 var correctItems = 0;
 var incorrectItems = 0;
-var data = ["one","two","three","four","five","six","seven","eight","nine","ten"]
-var indicators = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+var allCount = 0;
+var data = ["papercup","T-shirt","glass","iPhone","battery","cardboard box","plastic box","banana peel","books","water bottle", "diapers","paper towels", "pizza box", "tires", "yogurt cups"]
+var indicators = [1,1,1,0,0,1,0,1,1,1,0,0,0,0,0];
+var index = 0;
 
 
-var data= ["one","two","three","four","five"];
+
+var score= 0;
+
+
+
 
 
 class GameComponent extends Component {
@@ -141,8 +147,12 @@ class GameComponent extends Component {
           var el = document.getElementById(e.dataTransfer.getData('Text'));
 
           el.parentNode.removeChild(el);
-          correctItems= correctItems + 1;
+          if(indicators[index]==1) {
+              correctItems = correctItems + 1;
+          }
+          index++;
 
+          console.log("Items in the left"+correctItems)
           // stupid nom text + fade effect
           bin2.className = '';
           yum.innerHTML = eat[parseInt(Math.random() * eat.length)];
@@ -181,7 +191,12 @@ class GameComponent extends Component {
         var el = document.getElementById(e.dataTransfer.getData('Text'));
 
         el.parentNode.removeChild(el);
-          incorrectItems= incorrectItems + 1;
+          if(indicators[index]==0) {
+              incorrectItems= incorrectItems + 1;
+          }
+          index++;
+          console.log("Items in the right"+incorrectItems)
+
         // stupid nom text + fade effect
         bin2.className = '';
         yum.innerHTML = eat[parseInt(Math.random() * eat.length)];
@@ -205,6 +220,7 @@ class GameComponent extends Component {
         return false;
     });
 }
+
   
   /*function checkNumber(){
       if( correctItems === 5){
