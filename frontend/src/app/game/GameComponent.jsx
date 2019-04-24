@@ -16,7 +16,12 @@ class GameComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      score: 0
+      score: 0,
+      height: 0,
+      heightSyle:
+      {
+        height: '500px'
+      }
     };
     this.finish = null;
   }
@@ -277,7 +282,7 @@ render() {
             <div id="bin">
               <img alt="" className="recycle-img" src={recycle} />
             </div>
-          <ul>
+          <ul style={this.props.heightStyle}>
                   <li><a draggable="true" href="" id="one">{data[0]}</a></li>
                   <li><a draggable="true" href="" id="two">{data[1]}</a></li>
                   <li><a draggable="true" href="" id="three">{data[2]}</a></li>

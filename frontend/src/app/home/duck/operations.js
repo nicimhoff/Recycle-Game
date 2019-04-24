@@ -56,9 +56,6 @@ const updateLeaderboard = () => {
       var leaderboard = [];
       response.data.forEach((element) => {
         leaderboard.push(element[0]);
-        leaderboard.push(element[0]);
-        leaderboard.push(element[0]);
-        leaderboard.push(element[0]);
       });
       
       return dispatch(actions.updateLeaderboard(leaderboard));
@@ -80,8 +77,6 @@ const sendGamescore = (email, gamescore) => {
     }
   };
 }
-
-//        `https://aqq11p2sd0.execute-api.us-east-2.amazonaws.com/default/updateScore?email=${email}&score=${gamescore}`
 
 const login = (email, password) => {
   return async dispatch => {
