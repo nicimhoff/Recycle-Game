@@ -25,6 +25,13 @@ class HomeComponent extends React.Component {
       this.props.updateHighscore(this.props.email);
     }
     this.props.updateLeaderboard();
+    console.log("gameover: " + this.props.gameover)
+    if (this.props.gameover) {
+      this.setState(() => ({
+        endofroundDisplay: "block"
+      }))
+      this.props.setGameover(false);
+    }
   }
 
   onQuestionOneChange = event => {
@@ -55,14 +62,11 @@ class HomeComponent extends React.Component {
   }
 
   onSubmitQuestions = () => {
-    this.setState(() => ({
-      score: this.state.questionOne + this.state.questionTwo + this.state.questionThree
-    }));
-    if (this.state.score < 2) {
-      // set sanity to "good"
+    if (this.state.questionOne + this.state.questionTwo + this.state.questionThree < 2) {
+      this.props.setSanity(false);
       return this.props.history.push('/game');
     } else {
-      // set sanity to "evil"
+      this.props.setSanity(true);
       return this.props.history.push('/game');
     }
   }
@@ -107,7 +111,7 @@ class HomeComponent extends React.Component {
   }
 
   onClickLeaderboard = () => {
-    console.log(this.props.leaderboard);
+    console.log(this.props.gameover)
     this.setState(() => ({ leaderboardDisplay: "block" }));
   }
 

@@ -1,23 +1,31 @@
-body{
+body {
+  background: #e74c3c;
+}
+
+body-game {
   margin: 0px;
   padding: 0px;
   background: #e74c3c;
   font-family: 'Lato', sans-serif;
 }
 
-h1{
+.h1-game{
     color: #fff;
     text-align: center;
     font-weight: 200;
     font-size: 80px;
 }
-h1 span{
-  display: block;
-  font-size: 40px;
+
+.h2-game{
+    color: #fff;
+    text-align: center;
+    font-weight: 200;
+    font-size: 40px;
 }
 
-.holder{
-  
+.h1-game .span-game{
+  display: block;
+  font-size: 40px;
 }
 
 .game-div {
@@ -25,7 +33,7 @@ h1 span{
   align-items: center;
   display: flex;
   justify-content: space-between;
-  width: 80%;
+  width: 75%;
 }
 
 li {
@@ -78,7 +86,7 @@ li.over {
 }
 
 #bin {
-    height: 250px;
+    height: 900px;
     width: 0%;
     position: relative;
     margin-top: 0;
@@ -90,7 +98,7 @@ li.over {
 }
 
 #bin2 {
-  height: 250px;
+  height: 900px;
   width: 0%;
   position: relative;
 }

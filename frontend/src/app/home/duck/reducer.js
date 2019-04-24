@@ -21,7 +21,7 @@ const homeReducer = (state = initialState, action) => {
     case types.SET_GAMEOVER:
       return {
         ...state,
-        email: action.gameover
+        gameover: action.gameover
       };
     case types.SET_EMAIL:
       return {

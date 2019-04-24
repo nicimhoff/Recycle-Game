@@ -4,6 +4,7 @@ import { Auth } from "aws-amplify";
 
 const setSanity = sanity => {
   return dispatch => {
+    console.log(sanity)
     return dispatch(actions.setSanity(sanity));
   };
 };
