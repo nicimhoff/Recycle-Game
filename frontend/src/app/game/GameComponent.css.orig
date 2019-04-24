@@ -2,7 +2,7 @@ body {
   background: #e74c3c;
 }
 
-.body-game {
+body-game {
   margin: 0px;
   padding: 0px;
   background: #e74c3c;
@@ -22,13 +22,18 @@ body {
     font-weight: 200;
     font-size: 40px;
 }
-
-
+<<<<<<< HEAD
+.labels{
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+=======
 
 .h1-game .span-game{
   display: block;
   font-size: 40px;
-
+>>>>>>> 85fa032ef7181861b1054b3a92a1485bb5b592c6
 }
 
 .game-div {

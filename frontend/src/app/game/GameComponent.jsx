@@ -273,11 +273,14 @@ class GameComponent extends React.Component {
 
 render() {
     return (
+
+
       <div class="body-game">
           {this.props.sanity && <h1 className="h1-game">Save the Earth!</h1>}
           {!this.props.sanity && <h1 className="h1-game">Destroy the World!</h1>}
           {this.props.sanity && <h2 className="h2-game">Score: {this.state.score}</h2>}
           {!this.props.sanity && <h2 className="h2-game">Score: {this.state.score}</h2>}
+
           <div className="game-div">
             <div id="bin">
               <img alt="" className="recycle-img" src={recycle} />
