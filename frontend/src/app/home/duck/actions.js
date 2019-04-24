@@ -40,8 +40,9 @@ const sendGamescore = gamescore => ({
   gamescore
 });
 
-const login = highscore => ({
+const login = (email, highscore) => ({
   type: types.LOGIN,
+  email,
   highscore
 });
 

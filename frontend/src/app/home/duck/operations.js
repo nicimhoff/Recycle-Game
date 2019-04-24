@@ -16,6 +16,10 @@ const setGameover = gameover => {
 };
 
 const setEmail = email => {
+  if ((email) === undefined) {
+    email = localStorage.getItem('email');
+  }
+  localStorage.setItem('email', email);
   return dispatch => {
     return dispatch(actions.setEmail(email));
   };
@@ -86,7 +90,7 @@ const login = (email, password) => {
         `https://aqq11p2sd0.execute-api.us-east-2.amazonaws.com/default/getUser?email=${email}`
       );
       console.log(response.data.Items[0].score)
-      return dispatch(actions.login(response.data.Items[0].score));
+      return dispatch(actions.login(email, response.data.Items[0].score));
     } catch (error) {
       alert(error.message);
       return dispatch(actions.loginFail());

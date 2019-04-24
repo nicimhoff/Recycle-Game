@@ -16,12 +16,19 @@ class HomeComponent extends React.Component {
       score: 0,
       questionOne: 0,
       questionTwo: 0,
-      questionThree: 0
+      questionThree: 0,
+      name: "",
+      password: ""
     };
   }
 
   componentDidMount() {
-    if (this.props.isLoggedIn === true) {
+    this.setState(() => ({
+      name: this.props.email,
+      pass: this.props.password
+    }));
+    if (this.props.isLoggedIn === true || this.props.email !=null) {
+      this.props.sendGamescore(this.props.gamescore);
       this.props.updateHighscore(this.props.email);
     }
     this.props.updateLeaderboard();
@@ -72,18 +79,26 @@ class HomeComponent extends React.Component {
   }
 
   onEmailChange = event => {
-    const email = event.target.value;
-    this.props.setEmail(email);
+    const name = event.target.value;
+    this.setState(() => ({
+      name: name
+    }));
   };
 
   onPasswordChange = event => {
-    const password = event.target.value;
-    this.props.setPassword(password);
+    const pass = event.target.value;
+    this.setState(() => ({
+      pass: pass
+    }));
   };
 
   onLogin = () => {
     this.onClickWindow();
-    this.props.login(this.props.email, this.props.password);
+    this.props.login(this.state.name, this.state.pass);
+    this.setState(() => ({
+      name: "",
+      pass: ""
+    }));
   }
 
   onCreateAccount = () => {
@@ -111,7 +126,6 @@ class HomeComponent extends React.Component {
   }
 
   onClickLeaderboard = () => {
-    console.log(this.props.gameover)
     this.setState(() => ({ leaderboardDisplay: "block" }));
   }
 
@@ -130,12 +144,10 @@ class HomeComponent extends React.Component {
   }
 
   onEndRound = () => {
-    this.props.setGamescore(24);
     this.setState(() => ({ 
       endofroundDisplay: "block"
     }));
     if (this.props.isLoggedIn) {
-      this.props.sendGamescore(this.props.email, 24);
     }
   }
 
@@ -149,10 +161,10 @@ class HomeComponent extends React.Component {
         </header>
         <div>
           <h1 className="h1">Recycle Game</h1>
-          {this.props.isLoggedIn === true && (
+          {this.props.isLoggedIn && (
             <h2>{this.props.email}</h2>
           )}
-          {this.props.isLoggedIn === true && (
+          {(this.props.isLoggedIn && this.props.email != null && this.props.email != undefined) && (
             <h3>Highscore: {this.props.highscore}</h3>
           )}
           <center>
@@ -193,7 +205,7 @@ class HomeComponent extends React.Component {
             <div className="container">
               <label for="uname"><b>Email</b></label>
               <input 
-                value={this.props.email}
+                value={this.state.name}
                 onChange={event => this.onEmailChange(event)}
                 type="text" 
                 placeholder="Enter Username" 
@@ -202,7 +214,7 @@ class HomeComponent extends React.Component {
               </input>
               <label for="psw"><b>Password</b></label>
               <input 
-                value={this.props.password}
+                value={this.state.pass}
                 onChange={event => this.onPasswordChange(event)}
                 type="password" 
                 placeholder="Enter Password" 

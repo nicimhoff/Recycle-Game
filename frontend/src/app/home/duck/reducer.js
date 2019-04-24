@@ -56,13 +56,15 @@ const homeReducer = (state = initialState, action) => {
       return {
         ...state,
         isLoggedIn: true,
-        highscore: action.highscore
+        highscore: action.highscore,
+        email: action.email,
       };
     case types.LOGIN_FAIL:
       return {
         ...state,
         email: "",
-        password: ""
+        password: "",
+        isLoggedIn: false
       };
     case types.CREATE_ACCOUNT:
       return {
