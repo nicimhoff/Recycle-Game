@@ -250,6 +250,7 @@ class GameComponent extends Component {
 render() {
     return (
       <div class="holder">
+
           {this.props.sanity && <h1>Save the Earth!</h1>}
           {!this.props.sanity && <h1>Destroy the World!</h1>}
           {this.props.sanity && <h2>Score: {correctItems}</h2>}

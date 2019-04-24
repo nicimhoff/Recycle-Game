@@ -15,9 +15,11 @@ h1 span{
   display: block;
   font-size: 40px;
 }
-
-.holder{
-  
+.labels{
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
 }
 
 .game-div {
