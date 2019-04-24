@@ -6,11 +6,23 @@ const initialState = {
   isLoggedIn: false,
   highscore: 0,
   leaderboard: [],
-  gamescore: 0
+  gamescore: 0,
+  sanity: true,
+  gameover: false
 };
 
 const homeReducer = (state = initialState, action) => {
   switch (action.type) {
+    case types.SET_SANITY:
+      return {
+        ...state,
+        sanity: action.sanity
+      };
+    case types.SET_GAMEOVER:
+      return {
+        ...state,
+        email: action.gameover
+      };
     case types.SET_EMAIL:
       return {
         ...state,

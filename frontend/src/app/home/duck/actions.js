@@ -1,9 +1,19 @@
 import types from './types';
 
+const setSanity = sanity => ({
+  type: types.SET_SANITY,
+  sanity
+});
+
+const setGameover = gameover => ({
+  type: types.SET_GAMEOVER,
+  gameover
+});
+
 const setEmail = email => ({
   type: types.SET_EMAIL,
   email
-})
+});
 
 const setPassword = password => ({
   type: types.SET_PASSWORD,
@@ -49,6 +59,8 @@ const createAccountFail = () => ({
 });
 
 export default {
+  setSanity,
+  setGameover,
   setEmail,
   setPassword,
   setGamescore,

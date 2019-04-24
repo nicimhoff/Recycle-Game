@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import HomeComponent from './HomeComponent';
+import GameComponent from './GameComponent';
 import { homeOperations } from './duck';
 
 const mapStateToProps = state => ({
@@ -46,9 +46,9 @@ const mapDispatchToProps = dispatch => ({
   }
 });
 
-const HomeContainer = connect(
+const GameContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(HomeComponent);
+)(GameComponent);
 
-export default HomeContainer;
+export default GameContainer;
