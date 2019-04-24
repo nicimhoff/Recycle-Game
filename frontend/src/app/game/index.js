@@ -1,2 +1,2 @@
-import GameComponent from './GameComponent';
-export default GameComponent;
+import GameContainer from './GameContainer';
+export default GameContainer;
