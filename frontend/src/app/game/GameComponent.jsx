@@ -21,10 +21,22 @@ class GameComponent extends React.Component {
   }
   init() {
     scene.add(new THREE.AmbientLight(0x0f0f0f));
+      var light = new THREE.SpotLight( 0xffffff, 1.5 );
+      light.position.set( 0, 500, 2000 );
+
+      scene.add(light);
   }
+  animate(){
+      requestAnimationFrame(this.animate())
 
+      renderer.render(scene,camera)
+  }
+    render() {
 
-
+        init()
+        animate()
+    }
 }
+
 
 export default GameComponent;

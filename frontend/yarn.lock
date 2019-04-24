@@ -8289,6 +8289,11 @@ react@^16.8.6:
     prop-types "^15.6.2"
     scheduler "^0.13.6"
 
+reactable@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/reactable/-/reactable-1.1.0.tgz#2f84bb8b3808df8ac64694b539be416438db8498"
+  integrity sha512-SnvZ3CXyFFxGotw9cqNiVUGb2oW16UlIypGQZRJGgPiJuFqW22jO7A+Y/Tvv8no8F/bZoLdZ+QJP7eZfcc9kCw==
+
 read-pkg-up@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/read-pkg-up/-/read-pkg-up-1.0.1.tgz#9d63c13276c065918d57f002a57f40a1b643fb02"
