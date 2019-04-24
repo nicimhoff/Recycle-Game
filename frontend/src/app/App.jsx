@@ -6,8 +6,8 @@ import Home from './home';
 import Game from './game';
 
 export const history = createHistory();
-const baseUrl = ""; // when game is on localhost
-//const baseUrl = "Recycle-Game"; // for when game is hosted
+//const baseUrl = ""; // when game is on localhost
+const baseUrl = "Recycle-Game"; // for when game is hosted
 
 class App extends Component {
 
@@ -15,7 +15,7 @@ class App extends Component {
     return (
       <Router history={history}>
         <div>
-          <Route exact path={baseUrl + "/"} component={Home} />
+          <Route exact path={"Recycle-Game/"} component={Home} />
           <Route exact path={baseUrl + "/game"} component={Game} />
         </div>
       </Router>

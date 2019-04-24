@@ -126,12 +126,12 @@ class HomeComponent extends React.Component {
   }
 
   onEndRound = () => {
-    this.props.setGamescore(22);
+    this.props.setGamescore(24);
     this.setState(() => ({ 
       endofroundDisplay: "block"
     }));
     if (this.props.isLoggedIn) {
-      this.props.sendGamescore(this.props.email, 22);
+      this.props.sendGamescore(this.props.email, 24);
     }
   }
 
@@ -153,7 +153,7 @@ class HomeComponent extends React.Component {
           )}
           <center>
             <button className="screen-button" onClick={this.onClickPlay}>Play Game</button>
-            <button className="screen-button" onClick={this.onEndRound}>(temporary)Simulate End of Round</button>
+            
           </center>
         </div>
 

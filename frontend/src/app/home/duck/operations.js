@@ -43,6 +43,9 @@ const updateLeaderboard = () => {
       var leaderboard = [];
       response.data.forEach((element) => {
         leaderboard.push(element[0]);
+        leaderboard.push(element[0]);
+        leaderboard.push(element[0]);
+        leaderboard.push(element[0]);
       });
       
       return dispatch(actions.updateLeaderboard(leaderboard));
