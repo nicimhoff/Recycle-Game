@@ -2,6 +2,18 @@ import axios from 'axios';
 import actions from './actions';
 import { Auth } from "aws-amplify";
 
+const setSanity = sanity => {
+  return dispatch => {
+    return dispatch(actions.setSanity(sanity));
+  };
+};
+
+const setGameover = gameover => {
+  return dispatch => {
+    return dispatch(actions.setGameover(gameover));
+  };
+};
+
 const setEmail = email => {
   return dispatch => {
     return dispatch(actions.setEmail(email));
@@ -106,6 +118,8 @@ const createAccount = (email, password) => {
 };
 
 export default {
+  setSanity,
+  setGameover,
   setEmail,
   setPassword,
   setGamescore,
