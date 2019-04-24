@@ -49,7 +49,18 @@ ul li:first-child a{ background: #34495e }
 ul li:nth-child(2) a{ background: #3498db }
 ul li:nth-child(3) a{ background: #f39c12 }
 ul li:nth-child(4) a{ background: #27ae60 }
+ul li:nth-child(5) a{ background: #34495e }
+ul li:nth-child(6) a{ background: #3498db }
+ul li:nth-child(7) a{ background: #f39c12 }
+ul li:nth-child(8) a{ background: #27ae60 }
+ul li:nth-child(9) a{ background: #34495e }
+ul li:nth-child(10) a{ background: #9b59b6 }
+ul li:nth-child(11) a{ background: #f39c12 }
+ul li:nth-child(12) a{ background: #27ae60 }
+ul li:nth-child(13) a{ background: #34495e }
+ul li:nth-child(14) a{ background: #3498db }
 ul li:last-child a{ background: #9b59b6 }
+
 
 *[draggable=true] {
     -moz-user-select:none;
