@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import './GameComponent.css';
 import trash from './images/trash.jpg';
 var correctItems = 0;
-var data = ["one","two","three","four","five"]
+var data = ["one","two","three","four","five","six","seven","eight","nine","ten"]
+var indicators = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+
 
 class GameComponent extends Component {
   constructor(props) {
@@ -114,7 +116,6 @@ class GameComponent extends Component {
 
           var y = yum.cloneNode(true);
           bin.appendChild(y);
-
           setTimeout(function () {
               var t = setInterval(function () {
                   if (y.style.opacity <= 0) {
@@ -128,7 +129,7 @@ class GameComponent extends Component {
               }, 50);
           }, 250);
           if( correctItems === 5){
-             
+
               alert("hey!")
           }
           console.log("we came to checkNumber, correctItems=="+correctItems)
